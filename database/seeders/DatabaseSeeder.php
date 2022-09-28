@@ -21,6 +21,14 @@ class DatabaseSeeder extends Seeder
             'title' => Str::random(10),
             'content' => Str::random(250),
         ]);
+        DB::table('posts')->insert([
+            'title' => Str::random(10),
+            'content' => Str::random(250),
+        ]);
+        DB::table('posts')->insert([
+            'title' => Str::random(10),
+            'content' => Str::random(250),
+        ]);
 
         // \App\Models\User::factory(10)->create();
 

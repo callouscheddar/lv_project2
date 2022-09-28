@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function() {
-    return view('home');
+    return view('home', ['posts' => Post::all()]);
+});
+
+Route::get('/posts/{id}', function($id) {
+    return view('post', ['post' => Post::all()->where('id', $id)->first()]);
 });
 
 Route::get('/posts', function () {
-    return view('posts');
+    return view('posts', ['posts' => Post::all()]);
 });
 
 Route::get('/login', function() {
