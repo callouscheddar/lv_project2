@@ -17,16 +17,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+
         DB::table('posts')->insert([
             'title' => Str::random(10),
+            'tags' => 'Test,Test,Test',
             'content' => Str::random(250),
         ]);
         DB::table('posts')->insert([
             'title' => Str::random(10),
+            'tags' => 'Test,Test,Test',
             'content' => Str::random(250),
         ]);
         DB::table('posts')->insert([
             'title' => Str::random(10),
+            'tags' => 'Test,Test,Test',
             'content' => Str::random(250),
         ]);
 

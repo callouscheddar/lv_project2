@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-Route::get('/', function() {
-    return view('home', ['posts' => Post::all()]);
+// Show home page
+Route::get('/', function () {
+    return view('home');
 });
 
-Route::get('/posts/{id}', function($id) {
-    return view('post', ['post' => Post::all()->where('id', $id)->first()]);
-});
+Route::get('/posts/create', [PostController::class, 'create']);
 
-Route::get('/posts', function () {
-    return view('posts', ['posts' => Post::all()]);
-});
+Route::post('/posts/create', [PostController::class, 'store']);
+
+Route::get('/posts/{id}', [PostController::class, 'show']);
+
+Route::get('/posts', [PostController::class, 'index']);
+
 
 Route::get('/login', function() {
     return view('login');

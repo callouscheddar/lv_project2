@@ -19,7 +19,7 @@
                     class="border-2 cursor-pointer mt-2 hover:border-androidgreen border-black rounded-xl p-1">
             </form>
             <p class="mt-2 text-center">Don't have an account? <a class="hover:underline"
-                    href="register.html">Register</a></p>
+                    href="/register">Register</a></p>
         </div>
     </section>
 </x-layout>

@@ -3,7 +3,13 @@
         <h2 class="text-3xl"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
         <ul class="flex ml-2 flex-row">
             {{--Loop through tags--}}
-            <x-tag-comp />
+
+            @php
+                $tags = explode(',', $post->tags);
+            @endphp
+            @foreach($tags as $tag)
+                <x-tag-comp :tag="$tag" />
+            @endforeach
         </ul>
     </div>
     <p><a class="italic" href="user.html">Username</a> - 9/27/22</p>
